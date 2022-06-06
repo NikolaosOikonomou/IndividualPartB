@@ -14,9 +14,7 @@ namespace IndividualPartB
         static void Main(string[] args)
         {
 
-
-            PrimaryMenu.MenuMethod();
-
+            PrimaryMenu.Start();
 
         }
 

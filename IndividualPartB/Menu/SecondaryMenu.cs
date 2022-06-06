@@ -31,11 +31,10 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input);
+                int input = Validation.Integer(Console.ReadLine());
                 Console.ResetColor();
                 Console.Clear();
-                StudentChoice choice = (StudentChoice)input1;
+                StudentChoice choice = (StudentChoice)input;
 
                 switch (choice)
                 {
@@ -44,7 +43,7 @@ namespace IndividualPartB.Menu
                     case StudentChoice.EditStudent: menuStudentInteraction.Editing(); break;
                     case StudentChoice.DeleteStudent: menuStudentInteraction.Deleting(); break;
                     case StudentChoice.Back: isActive = false; break;
-                    default: Validation.Error(); break; 
+                    default: Validation.Error(); break;
                 }
             }
         }
@@ -63,11 +62,10 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input);
+                int input = Validation.Integer(Console.ReadLine());
                 Console.ResetColor();
                 Console.Clear();
-                TrainerChoice choice = (TrainerChoice)input1;
+                TrainerChoice choice = (TrainerChoice)input;
 
                 switch (choice)
                 {
@@ -95,11 +93,10 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input);
+                int input = Validation.Integer(Console.ReadLine());
                 Console.ResetColor();
                 Console.Clear();
-                CourseChoice choice = (CourseChoice)input1;
+                CourseChoice choice = (CourseChoice)input;
 
                 switch (choice)
                 {
@@ -127,11 +124,10 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input);
+                int input = Validation.Integer(Console.ReadLine());
                 Console.ResetColor();
                 Console.Clear();
-                AssignmentChoice choice = (AssignmentChoice)input1;
+                AssignmentChoice choice = (AssignmentChoice)input;
 
                 switch (choice)
                 {
@@ -147,7 +143,7 @@ namespace IndividualPartB.Menu
 
         public static void ProjectQueries() //Menu Queries options of the Project
         {
-            CourseRepository rep = new CourseRepository();
+            CourseController interaction = new CourseController();
             bool isActive = true;
             while (isActive)
             {
@@ -158,17 +154,16 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input);
+                int input = Validation.Integer(Console.ReadLine());
                 Console.ResetColor();
                 Console.Clear();
-                QueryChoice choice = (QueryChoice)input1;
+                QueryChoice choice = (QueryChoice)input;
 
                 switch (choice)
                 {
-                    case QueryChoice.StudentPerCourse: rep.StudentPerCourse(); break;
-                    case QueryChoice.TrainerPerCourse: rep.TrainerPerCourse(); break;
-                    case QueryChoice.AssignmentsPerStudentsPerCourse: rep.AssignmentPerStudentPerCourse(); break;
+                    case QueryChoice.StudentPerCourse: interaction.StudentPerCourse(); break;
+                    case QueryChoice.TrainerPerCourse: interaction.TrainerPerCourse(); break;
+                    case QueryChoice.AssignmentsPerStudentsPerCourse: interaction.AssignmentPerStudentPerCourse(); break;
                     case QueryChoice.Back: isActive = false; break;
                     default: Validation.Error(); break;
                 }

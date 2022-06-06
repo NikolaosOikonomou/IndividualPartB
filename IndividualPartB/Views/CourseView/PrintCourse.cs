@@ -40,8 +40,9 @@ namespace IndividualPartB.Views.CourseView
         /// Print Service for Student per Course Query!
         /// </summary>
         /// <param name="courses"></param>
-        public void StudentsPerCourse(List<Course> courses)
+        public void StudentsPer(List<Course> courses)
         {
+            
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{"Tittle",-10}{"Stream",-12}{"Type"}");
             Console.ResetColor();
@@ -51,6 +52,7 @@ namespace IndividualPartB.Views.CourseView
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"\t\t\t\t\t{"FName:",-10}{"LName:"}\n");
                 Console.ResetColor();
+
                 foreach (var student in course.Students)
                 {
                     Console.WriteLine($"\t\t\t\t\t{student.FirstName,-10} {student.LastName}");
@@ -62,7 +64,7 @@ namespace IndividualPartB.Views.CourseView
         /// Print Service for the Trainers per Course Query!
         /// </summary>
         /// <param name="courses"></param>
-        public void TrainersPerCourse(List<Course> courses)
+        public void TrainersPer(List<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{"Tittle",-10}{"Stream",-12}{"Type"}");
@@ -86,7 +88,7 @@ namespace IndividualPartB.Views.CourseView
         /// Print Service for the Assignment per Studnet Per course Query!
         /// </summary>
         /// <param name="courses"></param>
-        public void AssignmentPerStudentPerCourse(List<Course> courses)
+        public void AssignmentPerStudentPer(List<Course> courses)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{"Tittle",-10}{"Stream",-12}{"Type"}");

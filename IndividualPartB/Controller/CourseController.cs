@@ -1,4 +1,5 @@
 ﻿using IndividualPartB.Repositories.CourseRepository;
+using IndividualPartB.Repositories.StudentRepository;
 using IndividualPartB.Views.CourseView;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace IndividualPartB.Menu.MenuServices
     /// <summary>
     /// The Class Where the Repository, Input and Print services are compine to produce
     /// the results for The Course Entity
+    /// Furthermore includes the 3 methods to produce: 1. Student Per Course, 2. Trainer Per Course
+    /// and 3. Assignment Per Student Per Course  Queries.
     /// </summary>
     internal class CourseController : IController
     {
@@ -49,6 +52,36 @@ namespace IndividualPartB.Menu.MenuServices
 
             var course = rep.GetALL();
             printCourse.PrintCourses(course);
+        }
+
+        public void StudentPerCourse()
+        {
+            CourseRepository rep = new CourseRepository();
+            PrintCourse print = new PrintCourse();
+
+            var course = rep.StudentPerCourse();
+            print.StudentsPer(course);
+
+        }
+
+        public void TrainerPerCourse()
+        {
+            CourseRepository rep = new CourseRepository();
+            PrintCourse print = new PrintCourse();
+
+            var course = rep.TrainerPerCourse();
+            print.TrainersPer(course);
+
+        }
+
+        public void AssignmentPerStudentPerCourse()
+        {
+            CourseRepository rep = new CourseRepository();
+            PrintCourse print = new PrintCourse();
+
+            var course = rep.AssignmentPerStudentPerCourse();
+            print.AssignmentPerStudentPer(course);
+
         }
 
 

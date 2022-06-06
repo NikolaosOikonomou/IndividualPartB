@@ -13,7 +13,7 @@ namespace IndividualPartB.Validations
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static int CharsInsteadOfNumber(string input)
+        public static int Integer(string input)
         {
             int value;
             bool temp = int.TryParse(input, out value);

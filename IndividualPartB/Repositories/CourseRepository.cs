@@ -47,7 +47,7 @@ namespace IndividualPartB.Repositories.CourseRepository
                 if (course != null)
                     return course;
                 else
-                    return null;
+                    throw new Exception($"Student with {id} id doens't exist");
             }
 
         }
@@ -92,12 +92,10 @@ namespace IndividualPartB.Repositories.CourseRepository
         {
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())
             {
-                var studentsPerCourse = db.Courses.ToList();
+                var course = db.Courses.Include(x => x.Students).ToList(); //Eager Loading!!
                 PrintCourse print = new PrintCourse();
 
-
-                print.StudentsPerCourse(studentsPerCourse);
-                return studentsPerCourse;
+                return course;
             }
         }
 
@@ -109,12 +107,10 @@ namespace IndividualPartB.Repositories.CourseRepository
         {
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())
             {
-                var trainersPerCourse = db.Courses.ToList();
+                var course = db.Courses.Include(x => x.Trainers).ToList();
                 PrintCourse print = new PrintCourse();
 
-
-                print.TrainersPerCourse(trainersPerCourse);
-                return trainersPerCourse;
+                return course;
             }
         }
 
@@ -127,12 +123,10 @@ namespace IndividualPartB.Repositories.CourseRepository
         {
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())
             {
-                var assignPerStuPerCourse = db.Courses.ToList();
+                var course = db.Courses.Include(x => x.Assignments).Include(s => s.Students).ToList();
                 PrintCourse print = new PrintCourse();
 
-
-                print.AssignmentPerStudentPerCourse(assignPerStuPerCourse);
-                return assignPerStuPerCourse;
+                return course;
             }
         }
     }

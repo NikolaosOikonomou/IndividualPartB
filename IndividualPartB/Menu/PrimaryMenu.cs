@@ -15,7 +15,7 @@ namespace IndividualPartB.Menu
         /// <summary>
         /// The 5 Option in the Primary menu
         /// </summary>
-        public static void MenuMethod()
+        public static void Start()
         {
             bool isActive = true;
             while (isActive)
@@ -30,11 +30,11 @@ namespace IndividualPartB.Menu
                 Console.Write("Choose:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                string input = Console.ReadLine();
-                int input1 = Validation.CharsInsteadOfNumber(input); //Checking if the users inserts chars
+                
+                int input = Validation.Integer(Console.ReadLine()); //Checking if the users inserts chars
                 Console.ResetColor();
                 Console.Clear();
-                Choice choice = (Choice)input1;
+                Choice choice = (Choice)input;
 
                 switch (choice)
                 {
