@@ -14,40 +14,59 @@ namespace IndividualPartB.Menu.MenuServices
     /// </summary>
     internal class TrainerController : IController
     {
+        private TrainerRepository Rep = new TrainerRepository();
+
+        private InputTrainer Input = new InputTrainer();
+
+        private PrintTrainer Print = new PrintTrainer();
+
+
         public void Creating()
         {
-            TrainerRepository rep = new TrainerRepository();
-            InputTrainer input = new InputTrainer();
-
-            var trainer = input.GetTrainerData();
-            rep.Add(trainer);
+            try
+            {
+                Rep.Add(Input.GetTrainerData());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Deleting()
         {
-            TrainerRepository rep = new TrainerRepository();
-            InputTrainer input = new InputTrainer();
-
-            int id = input.GetIdForDelete();
-            rep.Delete(id);
+            try
+            {
+                Rep.Delete(Input.GetIdForDelete());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Editing()
         {
-            TrainerRepository rep = new TrainerRepository();
-            InputTrainer input = new InputTrainer();
-
-            var trainer = input.GetDataForEdit();
-            rep.Add(trainer);
+            try
+            {
+                Rep.Add(Input.GetDataForEdit());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Reading()
         {
-            TrainerRepository rep = new TrainerRepository();
-            PrintTrainer printTrainer = new PrintTrainer();
-
-            var trainers = rep.GetALL();
-            printTrainer.PrintTrainers(trainers);
+            try
+            {
+                Print.PrintTrainers(Rep.GetALL());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

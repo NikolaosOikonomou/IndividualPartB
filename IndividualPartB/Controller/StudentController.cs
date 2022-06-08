@@ -14,42 +14,58 @@ namespace IndividualPartB.Menu.MenuServices
     /// </summary>
     internal class StudentController : IController
     {
+        private StudentRepository Rep = new StudentRepository();
+
+        private InputStudent Input = new InputStudent();
+
+        private PrintStudent Print = new PrintStudent();
 
         public void Creating()
         {
-            StudentRepository rep = new StudentRepository();
-            InputStudent input = new InputStudent();
-
-            var student = input.GetStudentData();
-            rep.Add(student);
+            try
+            {
+                Rep.Add(Input.GetStudentData());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Deleting()
         {
-            StudentRepository rep = new StudentRepository();
-            InputStudent input = new InputStudent();
-
-            int id = input.GetIdForDelete();
-            rep.Delete(id);
-
+            try
+            {
+                Rep.Delete(Input.GetIdForDelete());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Editing()
         {
-            StudentRepository rep = new StudentRepository();
-            InputStudent input = new InputStudent();
-
-            var student = input.GetDataForEdit();
-            rep.Update(student);
+            try
+            {
+                Rep.Update(Input.GetDataForEdit());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Reading()
         {
-            StudentRepository rep = new StudentRepository();
-            PrintStudent printStudent = new PrintStudent();
-
-            var students = rep.GetALL();
-            printStudent.PrintStudents(students);
+            try
+            {
+                Print.PrintStudents(Rep.GetALL());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

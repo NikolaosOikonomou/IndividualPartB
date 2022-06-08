@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndividualPartB.Validations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,30 +22,60 @@ namespace IndividualPartB.Views.TrainerView
 
         public Trainer GetTrainerData()
         {
+            string firstName;
+            string lastName;
+            string subject;
+            
+
             Console.WriteLine("Give Trainer's name");
-            string name = Console.ReadLine();
+            do
+            {
+                firstName = Console.ReadLine();
+            } while (!Validation.ProperNameInput(firstName));
+
             Console.WriteLine("Give Trainer's lastname");
-            string lastName = Console.ReadLine();
-            Console.WriteLine("Give Trainer's Subject");
-            string subject = Console.ReadLine();
+            do
+            {
+                lastName = Console.ReadLine();
+            } while (!Validation.ProperNameInput(lastName));
+
+            Console.WriteLine("Give Trainer's Subject\t( C# , Java , Python , Fortant)");
+            do
+            {
+                subject = Console.ReadLine();
+            } while (!Validation.ProperCourseInput(subject));
 
 
-            return new Trainer(name, lastName, subject);
+
+            return new Trainer(firstName, lastName, subject);
         }
 
         public Trainer GetDataForEdit()
         {
+            string firstName;
+            string lastName;
+            string subject;
+
             Console.WriteLine("Give Trainer's id to edit it");
             int id = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Change Trainer's firstName");
-            string firstName = Console.ReadLine();
+            do
+            {
+                firstName = Console.ReadLine();
+            } while (!Validation.ProperNameInput(firstName));
 
             Console.WriteLine("Change Trainer's LastName");
-            string lastName = Console.ReadLine();
+            do
+            {
+                lastName = Console.ReadLine();
+            } while (!Validation.ProperNameInput(lastName));
 
-            Console.WriteLine("Change Trainer's Subject");
-            string subject = Console.ReadLine();
+            Console.WriteLine("Change Trainer's Subject\t( C# , Java , Python , Fortant)");
+            do
+            {
+                subject = Console.ReadLine();
+            } while (!Validation.ProperCourseInput(subject));
 
             return new Trainer() { ID = id, FirstName = firstName, LastsName = lastName, Subject = subject };
         }

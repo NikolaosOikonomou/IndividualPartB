@@ -34,7 +34,7 @@ namespace IndividualPartB.Repositories.CourseRepository
                 }
                 else
                 {
-                    throw new Exception($"Student with {id} id doens't exist");
+                    throw new Exception($"Course with {id} id doens't exist");
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace IndividualPartB.Repositories.CourseRepository
                 if (course != null)
                     return course;
                 else
-                    throw new Exception($"Student with {id} id doens't exist");
+                    throw new Exception($"Course with {id} id doens't exist");
             }
 
         }
@@ -79,7 +79,7 @@ namespace IndividualPartB.Repositories.CourseRepository
                     db.SaveChanges();
                 }
                 else
-                    throw new Exception($"Trainer with id {entity.ID} doesn't exist");
+                    throw new Exception($"Course with id {entity.ID} doesn't exist");
             }
         }
 
@@ -93,7 +93,6 @@ namespace IndividualPartB.Repositories.CourseRepository
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())
             {
                 var course = db.Courses.Include(x => x.Students).ToList(); //Eager Loading!!
-                PrintCourse print = new PrintCourse();
 
                 return course;
             }

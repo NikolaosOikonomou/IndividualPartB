@@ -75,5 +75,14 @@ namespace IndividualPartB.Enums
             Back = 5
         }
 
+        public enum TrainerSubject
+        {
+            C = 1,
+            Java,
+            Python,
+            Fortrant
+
+        }
+
     }
 }

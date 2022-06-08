@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace IndividualPartB.Repositories.TrainerRepository
 {
+    /// <summary>
+    /// The Repository Service Actions where the app connects to the Database on behalf Trainer Entiry
+    /// </summary>
     internal class TrainerRepository : IRepository
     {
-        /// <summary>
-        /// The Repository Service Actions where the app connects to the Database on behalf Trainer Entiry
-        /// </summary>
+        
         public void Add(IEntity entity)
         {
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())
@@ -33,7 +34,7 @@ namespace IndividualPartB.Repositories.TrainerRepository
                 }
                 else
                 {
-                    throw new Exception($"Student with {id} id doens't exist");
+                    throw new Exception($"Trainer with {id} id doens't exist");
                 }
             }
         }
@@ -46,7 +47,7 @@ namespace IndividualPartB.Repositories.TrainerRepository
                 if (trainer != null)
                     return trainer;
                 else
-                    return null;
+                    throw new Exception($"Trainer with {id} id doens't exist");
             }
         }
 

@@ -144,6 +144,7 @@ namespace IndividualPartB.Menu
         public static void ProjectQueries() //Menu Queries options of the Project
         {
             CourseController interaction = new CourseController();
+            
             bool isActive = true;
             while (isActive)
             {

@@ -33,7 +33,7 @@ namespace IndividualPartB.Repositories.AssignmentRepository
                 }
                 else
                 {
-                    throw new Exception($"Student with {id} id doens't exist");
+                    throw new Exception($"Assignment with {id} id doens't exist");
                 }
             }
         }
@@ -46,7 +46,7 @@ namespace IndividualPartB.Repositories.AssignmentRepository
                 if (assignment != null)
                     return assignment;
                 else
-                    return null;
+                    throw new Exception($"Assignment with {id} id doens't exist");
             }
 
         }
@@ -78,7 +78,7 @@ namespace IndividualPartB.Repositories.AssignmentRepository
                     db.SaveChanges();
                 }
                 else
-                    throw new Exception($"Trainer with id {entity.ID} doesn't exist");
+                    throw new Exception($"Assignment with id {entity.ID} doesn't exist");
             }
         }
     }

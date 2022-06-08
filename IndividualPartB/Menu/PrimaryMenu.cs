@@ -23,7 +23,7 @@ namespace IndividualPartB.Menu
 
                 Console.WriteLine("1 - For Students");
                 Console.WriteLine("2 - For Trainers");
-                Console.WriteLine("3 - For Coarses");
+                Console.WriteLine("3 - For Courses");
                 Console.WriteLine("4 - For Assignments");
                 Console.WriteLine("5 - For the Project Queries!");
                 Console.WriteLine("0 - Exit");
@@ -31,7 +31,7 @@ namespace IndividualPartB.Menu
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 
-                int input = Validation.Integer(Console.ReadLine()); //Checking if the users inserts chars
+                int input = Validation.Integer(Console.ReadLine()); 
                 Console.ResetColor();
                 Console.Clear();
                 Choice choice = (Choice)input;

@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace IndividualPartB.Repositories.StudentRepository
 {
+    /// <summary>
+    /// The Repository Service Actions where the app connects to the Database on behalf Student Entiry
+    /// </summary>
     public class StudentRepository : IRepository
     {
-        /// <summary>
-        /// The Repository Service Actions where the app connects to the Database on behalf Student Entiry
-        /// </summary>
+       
         public void Add(IEntity entity)
         {
             using (Individual_Part_BEntities db = new Individual_Part_BEntities())

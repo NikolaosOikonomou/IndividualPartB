@@ -14,40 +14,56 @@ namespace IndividualPartB.Menu.MenuServices
     /// </summary>
     internal class AssignmentController : IController
     {
+        private  AssignmentRepository Rep = new AssignmentRepository();
+        private  InputAssignment Input = new InputAssignment();
+        private  PrintAssignment Print = new PrintAssignment();
+
         public void Creating()
         {
-            AssignmentRepository rep = new AssignmentRepository();
-            InputAssignment input = new InputAssignment();
-
-            var assignment = input.GetAssignmentData();
-            rep.Add(assignment);
+            try
+            {
+                Rep.Add(Input.GetAssignmentData());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
-        public void Deleting()
+        public void Deleting() 
         {
-            AssignmentRepository rep = new AssignmentRepository();
-            InputAssignment input = new InputAssignment();
-
-            int id = input.GetIdForDelete();
-            rep.Delete(id);
+            try
+            {
+                Rep.Delete(Input.GetIdForDelete());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
-        public void Editing()
+        public void Editing() 
         {
-            AssignmentRepository rep = new AssignmentRepository();
-            InputAssignment input = new InputAssignment();
-
-            var assignment = input.GetDataForEdit();
-            rep.Update(assignment);
+            try
+            {
+                Rep.Update(Input.GetAssignmentData());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Reading()
         {
-            AssignmentRepository rep = new AssignmentRepository();
-            PrintAssignment printAssignment = new PrintAssignment();
-
-            var assignment = rep.GetALL();
-            printAssignment.PrintAssignments(assignment);
+            try
+            {
+                Print.PrintAssignments(Rep.GetALL());
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
