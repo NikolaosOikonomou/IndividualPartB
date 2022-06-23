@@ -1,0 +1,16 @@
+insert into Trainer(FirstName, LastsName, Subject) values ('Hector', 'Gkatsos','C#');
+insert into Trainer(FirstName, LastsName, Subject) values ('Periklis', 'Aidinopoulos','C#');
+insert into Trainer(FirstName, LastsName, Subject) values ('Helen', 'Smith','C#');
+insert into Trainer(FirstName, LastsName, Subject) values ('Julie', 'Papadopoulou','C#');
+insert into Trainer(FirstName, LastsName, Subject) values ('George', 'Pasparakis','Java');
+insert into Trainer(FirstName, LastsName, Subject) values ('Axel', 'Rose','Java');
+insert into Trainer(FirstName, LastsName, Subject) values ('David', 'Gilmour','Java');
+insert into Trainer(FirstName, LastsName, Subject) values ('Tony', 'Iommi','Java');
+insert into Trainer(FirstName, LastsName, Subject) values ('Syd', 'Barrett','Python');
+insert into Trainer(FirstName, LastsName, Subject) values ('Helen', 'Henderson','Python');
+insert into Trainer(FirstName, LastsName, Subject) values ('Scarlett', 'Johansson','Python');
+insert into Trainer(FirstName, LastsName, Subject) values ('Jane', 'Levine','Python');
+insert into Trainer(FirstName, LastsName, Subject) values ('Christina', 'Fuentes','Fortran');
+insert into Trainer(FirstName, LastsName, Subject) values ('Selina', 'Mathews','Fortran');
+insert into Trainer(FirstName, LastsName, Subject) values ('Tina', 'Turner','Fortran');
+insert into Trainer(FirstName, LastsName, Subject) values ('Eden', 'Stanton','Fortran');
